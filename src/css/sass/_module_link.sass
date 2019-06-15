@@ -1,0 +1,27 @@
+.link
+    font-family: var(--font-stack-secondary)
+    transition: background-color 0.3s ease-in-out
+    cursor: pointer
+    color: white
+    padding: 10px 20px
+
+.--big
+    font-size: 1.5rem
+    padding: 10px 40px
+    border: 2px solid transparent
+    border-radius: 50px
+
+.--big:hover
+    animation: underline 0.7s linear 0s 1
+
+@keyframes underline
+    0%
+        border-bottom: 2px solid white
+    25%
+        border-right: 2px solid white
+    50%
+        border-top: 2px solid white
+    75%
+        border-left: 2px solid white
+    100%
+        border-bottom: 2px solid white
