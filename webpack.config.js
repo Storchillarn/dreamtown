@@ -16,7 +16,10 @@ module.exports = {
             template: 'src/index.html',
             inject: true,
             favicon: './favicon.ico',
-            chunks: ['main']
+            chunks: ['main'],
+            meta: {
+                viewport: 'width=device-width, initial-scale=1.0'
+            }
         })
     ],
     module: {
@@ -24,8 +27,14 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [
-                    "style-loader",
-                    "css-loader"
+                    'style-loader',
+                    'css-loader'
+                ]
+            },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: [
+                    'file-loader'
                 ]
             },
             {

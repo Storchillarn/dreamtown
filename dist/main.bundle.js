@@ -93,7 +93,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Imports\nexports.push([module.i, \"@import url(https://fonts.googleapis.com/css?family=Sawarabi+Mincho&display=swap);\", \"\"]);\n// Module\nexports.push([module.i, \"* {\\n  margin: 0;\\n  text-decoration: none;\\n  color: black;\\n}\\n\\n:root {\\n  --font-stack: \\\"Sawarabi Mincho\\\", \\\"Times New Roman\\\", serif;\\n}\\n\\nhtml {\\n  font-size: 16px;\\n}\\n\\nheader {\\n  width: 100%;\\n  height: 100vh;\\n  background-image: linear-gradient(0deg, #020202f7 0%, rgba(255, 255, 255, 0.2) 50%, rgba(40, 0, 0, 0.4) 100%);\\n  transition: all 1s ease-in-out;\\n}\\n\\n.header-default {\\n  background: linear-gradient(0deg, #020202f7 0%, rgba(255, 255, 255, 0.2) 50%, rgba(40, 0, 0, 0.4) 100%);\\n  transition: all 1s ease-in-out;\\n}\\n\\n.header-hover-music {\\n  background: linear-gradient(0deg, #020202f7 0%, rgba(255, 146, 33, 0.46) 50%, rgba(40, 0, 0, 0.4) 100%);\\n  transition: all 1s ease-in-out;\\n}\\n\\n.header-background {\\n  /* background-image: url('../img/background.JPG') */\\n  background-size: cover;\\n  background-position: bottom;\\n  background-attachment: fixed;\\n}\\n\\nheader > * {\\n  max-width: 60%;\\n  margin: auto;\\n  position: relative;\\n  text-align: center;\\n}\\n\\nh1 {\\n  font-family: var(--font-stack);\\n  font-size: 10vw;\\n  top: 6%;\\n  text-shadow: 1px 1px 50px rgba(255, 255, 255, 0.05);\\n}\\n\\nheader p {\\n  font-size: 2rem;\\n  margin-top: 1rem;\\n}\\n\\nnav {\\n  width: 100%;\\n  display: flex;\\n  flex-flow: row nowrap;\\n  justify-content: space-between;\\n}\\n\\nnav :last-child {\\n  border-right: none;\\n}\\n\\nnav a {\\n  padding: 30px 20px;\\n  background-color: #020202f7;\\n  width: 100%;\\n  text-align: center;\\n  font-size: 2rem;\\n  border-right: 4px solid #1a1a1af7;\\n  color: white;\\n  font-family: var(--font-stack);\\n  transition: background-color 0.3s ease-in-out;\\n}\\n\\nnav a:hover {\\n  background-color: #6d6d6df7;\\n}\", \"\"]);\n\n\n//# sourceURL=webpack:///./src/main.css?./node_modules/css-loader/dist/cjs.js");
+eval("exports = module.exports = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\")(false);\n// Imports\nexports.push([module.i, \"@import url(https://fonts.googleapis.com/css?family=Sawarabi+Mincho&display=swap);\", \"\"]);\nvar getUrl = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/getUrl.js */ \"./node_modules/css-loader/dist/runtime/getUrl.js\");\nvar ___CSS_LOADER_URL___0___ = getUrl(__webpack_require__(/*! ./img/background.jpg */ \"./src/img/background.jpg\"));\n// Module\nexports.push([module.i, \"* {\\n  margin: 0;\\n  text-decoration: none;\\n  color: black;\\n}\\n\\n:root {\\n  --font-stack: \\\"Sawarabi Mincho\\\", \\\"Times New Roman\\\", serif;\\n}\\n\\nhtml {\\n  font-size: 16px;\\n}\\n\\nheader {\\n  width: 100%;\\n  height: 100vh;\\n  background-image: linear-gradient(0deg, #020202f7 0%, rgba(255, 255, 255, 0.2) 50%, rgba(40, 0, 0, 0.4) 100%);\\n  transition: all 1s ease-in-out;\\n}\\n\\n.header-default {\\n  background: linear-gradient(0deg, #020202f7 0%, rgba(255, 255, 255, 0.2) 50%, rgba(40, 0, 0, 0.4) 100%);\\n  transition: all 1s ease-in-out;\\n}\\n\\n.header-hover-music {\\n  background: linear-gradient(0deg, #020202f7 0%, rgba(255, 146, 33, 0.46) 50%, rgba(40, 0, 0, 0.4) 100%);\\n  transition: all 1s ease-in-out;\\n}\\n\\n.header-background {\\n  background-image: url(\" + ___CSS_LOADER_URL___0___ + \");\\n  background-size: cover;\\n  background-position: bottom;\\n  background-attachment: fixed;\\n}\\n\\nheader > * {\\n  max-width: 60%;\\n  margin: auto;\\n  position: relative;\\n  text-align: center;\\n}\\n\\nh1 {\\n  font-family: var(--font-stack);\\n  font-size: 10vw;\\n  top: 6%;\\n  text-shadow: 1px 1px 50px rgba(255, 255, 255, 0.05);\\n}\\n\\nheader p {\\n  font-size: 2rem;\\n  margin-top: 1rem;\\n}\\n\\nnav {\\n  width: 100%;\\n  display: flex;\\n  flex-flow: row nowrap;\\n  justify-content: space-between;\\n}\\n\\nnav :last-child {\\n  border-right: none;\\n}\\n\\nnav a {\\n  padding: 30px 20px;\\n  background-color: #020202f7;\\n  width: 100%;\\n  text-align: center;\\n  font-size: 2rem;\\n  border-right: 4px solid #1a1a1af7;\\n  color: white;\\n  font-family: var(--font-stack);\\n  transition: background-color 0.3s ease-in-out;\\n}\\n\\nnav a:hover {\\n  background-color: #6d6d6df7;\\n}\", \"\"]);\n\n\n//# sourceURL=webpack:///./src/main.css?./node_modules/css-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -106,6 +106,18 @@ eval("exports = module.exports = __webpack_require__(/*! ../node_modules/css-loa
 
 "use strict";
 eval("\n\n/*\n  MIT License http://www.opensource.org/licenses/mit-license.php\n  Author Tobias Koppers @sokra\n*/\n// css base code, injected by the css-loader\n// eslint-disable-next-line func-names\nmodule.exports = function (useSourceMap) {\n  var list = []; // return the list of modules as css string\n\n  list.toString = function toString() {\n    return this.map(function (item) {\n      var content = cssWithMappingToString(item, useSourceMap);\n\n      if (item[2]) {\n        return \"@media \".concat(item[2], \"{\").concat(content, \"}\");\n      }\n\n      return content;\n    }).join('');\n  }; // import a list of modules into the list\n  // eslint-disable-next-line func-names\n\n\n  list.i = function (modules, mediaQuery) {\n    if (typeof modules === 'string') {\n      // eslint-disable-next-line no-param-reassign\n      modules = [[null, modules, '']];\n    }\n\n    var alreadyImportedModules = {};\n\n    for (var i = 0; i < this.length; i++) {\n      // eslint-disable-next-line prefer-destructuring\n      var id = this[i][0];\n\n      if (id != null) {\n        alreadyImportedModules[id] = true;\n      }\n    }\n\n    for (var _i = 0; _i < modules.length; _i++) {\n      var item = modules[_i]; // skip already imported module\n      // this implementation is not 100% perfect for weird media query combinations\n      // when a module is imported multiple times with different media queries.\n      // I hope this will never occur (Hey this way we have smaller bundles)\n\n      if (item[0] == null || !alreadyImportedModules[item[0]]) {\n        if (mediaQuery && !item[2]) {\n          item[2] = mediaQuery;\n        } else if (mediaQuery) {\n          item[2] = \"(\".concat(item[2], \") and (\").concat(mediaQuery, \")\");\n        }\n\n        list.push(item);\n      }\n    }\n  };\n\n  return list;\n};\n\nfunction cssWithMappingToString(item, useSourceMap) {\n  var content = item[1] || ''; // eslint-disable-next-line prefer-destructuring\n\n  var cssMapping = item[3];\n\n  if (!cssMapping) {\n    return content;\n  }\n\n  if (useSourceMap && typeof btoa === 'function') {\n    var sourceMapping = toComment(cssMapping);\n    var sourceURLs = cssMapping.sources.map(function (source) {\n      return \"/*# sourceURL=\".concat(cssMapping.sourceRoot).concat(source, \" */\");\n    });\n    return [content].concat(sourceURLs).concat([sourceMapping]).join('\\n');\n  }\n\n  return [content].join('\\n');\n} // Adapted from convert-source-map (MIT)\n\n\nfunction toComment(sourceMap) {\n  // eslint-disable-next-line no-undef\n  var base64 = btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap))));\n  var data = \"sourceMappingURL=data:application/json;charset=utf-8;base64,\".concat(base64);\n  return \"/*# \".concat(data, \" */\");\n}\n\n//# sourceURL=webpack:///./node_modules/css-loader/dist/runtime/api.js?");
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/getUrl.js":
+/*!********************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nmodule.exports = function (url, needQuotes) {\n  if (typeof url !== 'string') {\n    return url;\n  } // If url is already wrapped in quotes, remove them\n\n\n  if (/^['\"].*['\"]$/.test(url)) {\n    // eslint-disable-next-line no-param-reassign\n    url = url.slice(1, -1);\n  } // Should url be wrapped?\n  // See https://drafts.csswg.org/css-values-3/#urls\n\n\n  if (/[\"'() \\t\\n]/.test(url) || needQuotes) {\n    return \"\\\"\".concat(url.replace(/\"/g, '\\\\\"').replace(/\\n/g, '\\\\n'), \"\\\"\");\n  }\n\n  return url;\n};\n\n//# sourceURL=webpack:///./node_modules/css-loader/dist/runtime/getUrl.js?");
 
 /***/ }),
 
@@ -131,6 +143,17 @@ eval("\n/**\n * When source maps are enabled, `style-loader` uses a link element
 
 /***/ }),
 
+/***/ "./src/img/background.jpg":
+/*!********************************!*\
+  !*** ./src/img/background.jpg ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"293c6088135b5ef3d76360d2c1e94d55.jpg\";\n\n//# sourceURL=webpack:///./src/img/background.jpg?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -139,7 +162,7 @@ eval("\n/**\n * When source maps are enabled, `style-loader` uses a link element
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\n__webpack_require__(/*! ./main.css */ \"./src/main.css\");\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("\n\n__webpack_require__(/*! ./main.css */ \"./src/main.css\");\n\n__webpack_require__(/*! ./img/background.jpg */ \"./src/img/background.jpg\");\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
