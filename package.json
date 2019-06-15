@@ -5,7 +5,9 @@
   "main": "app.js",
   "dependencies": {
     "core-js": "^3.1.4",
-    "express": "^4.17.1"
+    "css-loader": "^3.0.0",
+    "express": "^4.17.1",
+    "style-loader": "^0.23.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
@@ -22,7 +24,16 @@
   },
   "scripts": {
     "test": "mocha",
-    "start": "nodemon server.js"
+    "lint": "eslint src/*.js",
+    "start": "nodemon server.js",
+    "sass": "sass src/css/main.sass src/css/main.css",
+    "sass-watch": "sass --watch src/css/main.sass src/css/main.css",
+    "postcss": "npx postcss src/css/*.css --use autoprefixer -d src",
+    "babel": "babel src/js/*.js -d src",
+    "babel-watch": "babel -w src/js/*.js -d src",
+    "webpack": "webpack --config webpack.config.js",
+    "webpack-watch": "webpack --watch --config webpack.config.js",
+    "dev-release": "npm run lint && npm run sass && npm run postcss && npm run babel && npm run webpack"
   },
   "repository": {
     "type": "git",
