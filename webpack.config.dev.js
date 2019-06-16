@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
     mode: 'development',
     entry: {
-        main: path.join(__dirname, 'src', 'index.js')
+        index: path.join(__dirname, 'src', 'index.js')
     },
     output: {
         filename: '[name].bundle.js',
@@ -18,7 +18,7 @@ module.exports = {
             template: 'src/index.html',
             inject: true,
             favicon: './favicon.ico',
-            chunks: ['main'],
+            chunks: ['index'],
             meta: {
                 viewport: 'width=device-width, initial-scale=1.0'
             }

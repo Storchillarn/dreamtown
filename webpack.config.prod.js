@@ -32,6 +32,15 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.(html)$/,
+                use: {
+                    loader: 'html-loader',
+                    options: {
+                        minimize: true
+                  }
+                }
+            },
+            {
                 test: /\.s(a|c)ss$/,
                 use: [
                     {
@@ -46,6 +55,7 @@ module.exports = {
                         }
                     },
                     'css-loader',
+                    'postcss-loader',
                     'sass-loader'
                 ]
             },
