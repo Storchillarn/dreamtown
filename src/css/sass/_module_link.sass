@@ -7,21 +7,24 @@
 
 .--big
     font-size: 1.5rem
-    padding: 10px 40px
+    padding: 10px 20px
+    margin: 0px 20px
     border: 2px solid transparent
     border-radius: 50px
 
 .--big:hover
-    animation: underline 0.7s linear 0s 1
+    animation: underline 0.5s linear 0s 1
+    transition: border 1s linear 0.6s
+    transition: border-radius 0.5s linear 0s
+    border-bottom: 4px solid rgba(255, 255, 255, 0.9)
+    border-radius: 0px
 
 @keyframes underline
     0%
-        border-bottom: 2px solid white
-    25%
-        border-right: 2px solid white
-    50%
-        border-top: 2px solid white
-    75%
-        border-left: 2px solid white
+        border-right: 2px solid rgba(255, 255, 255, 0.5)
+    33%
+        border-top: 2px solid rgba(255, 255, 255, 0.4)
+    66%
+        border-left: 2px solid rgba(255, 255, 255, 0.6)
     100%
-        border-bottom: 2px solid white
+        border-bottom: 4px solid rgba(255, 255, 255, 0.9)

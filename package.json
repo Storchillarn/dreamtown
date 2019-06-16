@@ -33,8 +33,8 @@
     "postcss-watch": "postcss -w src/css/*.css --use autoprefixer -d src",
     "babel": "babel src/js/*.js -d src",
     "babel-watch": "babel -w src/js/*.js -d src",
-    "webpack": "webpack --config webpack.config.js",
-    "webpack-watch": "webpack --watch --config webpack.config.js",
+    "webpack": "webpack --config webpack.config.dev.js",
+    "webpack-watch": "webpack --watch --config webpack.config.dev.js",
     "dev-release": "npm run lint && npm run sass && npm run postcss && npm run babel && npm run webpack"
   },
   "repository": {
