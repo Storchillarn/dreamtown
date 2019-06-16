@@ -16,12 +16,19 @@ window.onload = () => {
         }
     }, 250);
 
+    let swoop = false;
+    
     function scrollHandler(elem) {
         if (window.scrollY >= 100) {
             elem.classList.add('main-nav-scroll');
+            swoop = true;
         }
         else if (window.scrollY < 100) {
             elem.classList.remove('main-nav-scroll');
+            if (swoop) {
+                elem.classList.add('--swoop');
+                swoop = false;
+            }
         }
     }
 }
