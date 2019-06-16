@@ -1,8 +1,9 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     entry: {
         main: path.join(__dirname, 'src', 'index.js')
     },
@@ -11,6 +12,10 @@ module.exports = {
         path: path.resolve(__dirname, 'dist')
     },
     plugins: [
+        new MiniCssExtractPlugin({
+            filename: '[name].css',
+            chunkFilename: '[id].css'
+        }),
         new HtmlWebpackPlugin({
             filename: 'index.html',
             template: 'src/index.html',
@@ -27,7 +32,17 @@ module.exports = {
             {
                 test: /\.s(a|c)ss$/,
                 use: [
-                    'style-loader',
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            publicPath: (resourcePath, context) => {
+                            // publicPath is the relative path of the resource to the context
+                            // e.g. for ./css/admin/main.css the publicPath will be ../../
+                            // while for ./css/main.css the publicPath will be ../
+                            return path.relative(path.dirname(resourcePath), context) + '/';
+                           }
+                        }
+                    },
                     'css-loader',
                     'sass-loader'
                 ]
@@ -35,7 +50,13 @@ module.exports = {
             {
                 test: /\.(png|svg|jpg|gif)$/,
                 use: [
-                    'file-loader'
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            outputPath: 'images',
+                            publicPath: 'images'
+                        }
+                    }
                 ]
             },
             {
