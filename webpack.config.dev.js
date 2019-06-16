@@ -1,12 +1,14 @@
 const path = require('path');
 const merge = require('webpack-merge');
 const common = require('./webpack.config.common.js');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = merge(common, {
     mode: 'development',
     devtool: 'inline-source-map',
+    devServer: {
+        contentBase: path.resolve(__dirname, 'src'),
+        publicPath: '/'
+    },
     module: {
         rules: [
             {
