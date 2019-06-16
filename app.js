@@ -4,8 +4,8 @@ const express = require('express');
 const app = express();
 
 app.use(express.static(path.join(__dirname, 'dist')));
-app.get('*', (req, res) => {
-    res.redirect('/');
-});
+// app.get('*', (req, res) => {
+//     res.redirect('/');
+// });
 
 module.exports.app = app;
