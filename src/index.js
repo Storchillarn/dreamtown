@@ -10,8 +10,10 @@ window.onload = () => {
 
     const nav = document.querySelector('NAV');
     const mainHeading = document.querySelector('h1[class="header_heading"]');
-    
+    const menuLinks = document.querySelectorAll('a[class="main-nav__link"]');
+
     window.addEventListener('scroll', () => scrolling = true);
+    menuLinks.forEach(link => link.addEventListener('click', handleMenuClick));
     
     setInterval(() => {
         if (scrolling) {
@@ -48,5 +50,14 @@ window.onload = () => {
             let blurFilter = `blur(${blur}px)`;
             elem.style.filter = blurFilter;
         }
+    }
+
+    function handleMenuClick() {
+        event.preventDefault();
+        const regex = /#.*/g;
+        let link = event.target.href;
+        let location = link.match(regex)[0].replace('#', '');
+        let elem = document.getElementById(location);
+        elem.scrollIntoView({behavior: 'smooth'});
     }
 }
