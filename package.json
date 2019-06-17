@@ -35,7 +35,7 @@
   "scripts": {
     "test": "mocha",
     "lint": "eslint src/*.js",
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "sass": "sass src/css/main.sass src/css/main.css",
     "sass-watch": "sass --watch src/css/main.sass src/css/main.css",
     "postcss": "npx postcss src/css/*.css --use autoprefixer -d src",
