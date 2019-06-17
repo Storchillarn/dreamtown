@@ -60,4 +60,9 @@ window.onload = () => {
         let elem = document.getElementById(location);
         elem.scrollIntoView({behavior: 'smooth'});
     }
+
+    // function windowResizeHandler() {
+    //     if (event.)
+    //     nav.classList
+    // }
 }
