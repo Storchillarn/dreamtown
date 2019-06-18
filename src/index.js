@@ -1,17 +1,18 @@
 import './img/soundcloud-icon.png';
 import './img/spotify-icon.png';
 import './img/background.jpg';
+import './img/white-menu-icon.png';
 import './main.sass';
 
 window.onload = () => {
 
     let scrolling = false;
     let swoop = false;
-
+    
     const nav = document.querySelector('NAV');
     const mainHeading = document.querySelector('h1[class="header_heading"]');
     const menuLinks = document.querySelectorAll('a[class="main-nav__link"]');
-
+    
     window.addEventListener('scroll', () => scrolling = true);
     menuLinks.forEach(link => link.addEventListener('click', handleMenuClick));
     
@@ -23,7 +24,6 @@ window.onload = () => {
         }
     }, 100);
     
-
     function navScrollHandler(elem) {
         if (window.scrollY >= 100) {
             elem.classList.add('main-nav-scroll');
