@@ -2,54 +2,51 @@ import './img/soundcloud-icon.png';
 import './img/spotify-icon.png';
 import './img/background.jpg';
 import './img/white-menu-icon.png';
+import { throttle } from 'lodash';
 import './main.sass';
 
 window.onload = () => {
 
-    let scrolling = false;
-    let swoop = false;
-    
     const nav = document.querySelector('NAV');
-    const mainHeading = document.querySelector('h1[class="header_heading"]');
     const menuLinks = document.querySelectorAll('a[class="main-nav__link"]');
+    const mainHeading = document.querySelector('h1[class="header_heading"]');
     
-    window.addEventListener('scroll', () => scrolling = true);
+    if (window.innerWidth <= 768) {
+        nav.classList.add('main-nav-small--collapsed');
+    }
+    
+    loadIframes();
+    
+    window.addEventListener('scroll', throttle(navScrollHandler, 250));
+    window.addEventListener('scroll', throttle(headingScrollHandler, 100));
+    window.addEventListener('resize', throttle(windowResizeHandler, 300));
     menuLinks.forEach(link => link.addEventListener('click', handleMenuClick));
     
-    setInterval(() => {
-        if (scrolling) {
-            scrolling = !scrolling;
-            navScrollHandler(nav);
-            headingScrollHandler(mainHeading);
-        }
-    }, 100);
-    
-    function navScrollHandler(elem) {
+    let swoop = false;
+    function navScrollHandler() {
         if (window.scrollY >= 100) {
-            elem.classList.add('main-nav-scroll');
-            elem.classList.remove('--swoop');
+            nav.classList.add('main-nav-scroll');
+            nav.classList.remove('--swoop');
             swoop = true;
         }
         else if (window.scrollY < 100) {
-            elem.classList.remove('main-nav-scroll');
+            nav.classList.remove('main-nav-scroll');
             if (swoop) {
-                elem.classList.add('--swoop');
+                nav.classList.add('--swoop');
                 swoop = false;
             }
         }
     }
     
-    function headingScrollHandler(elem) {
-        if (window.scrollY > 5) {
-            let blur = (window.scrollY / 10);
-            let blurFilter = `blur(${blur}px)`;
-            elem.style.filter = blurFilter;
-        }
-        else if (window.scrollY <= 5) {
+    function headingScrollHandler() {
+        let blur;
+        if (window.scrollY > 10) {
+            blur = (window.scrollY / 10);
+        } else {
             blur = 0;
-            let blurFilter = `blur(${blur}px)`;
-            elem.style.filter = blurFilter;
         }
+        let blurFilter = `blur(${blur}px)`;
+        mainHeading.style.filter = blurFilter;
     }
 
     function handleMenuClick() {
@@ -61,8 +58,19 @@ window.onload = () => {
         elem.scrollIntoView({behavior: 'smooth'});
     }
 
-    // function windowResizeHandler() {
-    //     if (event.)
-    //     nav.classList
-    // }
+    function windowResizeHandler() {
+        if (window.innerWidth <= 768) {
+            nav.classList.add('main-nav-small--expanded');
+        }
+        
+        if (window.innerWidth > 768) {
+            nav.classList.remove('main-nav-small--expanded');
+        }
+    }
+
+    function loadIframes() {
+        const iframeSrc = 'https://open.spotify.com/embed/album/2zsWAvWqBPARwk3nfldfvX';
+        document.querySelector('iframe[id="small"]').setAttribute('src', iframeSrc);
+        document.querySelector('iframe[id="large"]').setAttribute('src', iframeSrc);
+    }
 }
