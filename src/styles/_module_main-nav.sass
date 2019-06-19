@@ -64,38 +64,6 @@
 .main-nav > *
     display: none
 
-@keyframes underline
-    0%
-        border-right: 2px solid rgba(255, 255, 255, 0.5)
-    33%
-        border-top: 2px solid rgba(255, 255, 255, 0.4)
-    66%
-        border-left: 2px solid rgba(255, 255, 255, 0.6)
-    100%
-        border-bottom: 4px solid rgba(255, 255, 255, 0.9)
-
-@keyframes underline-black
-    0%
-        border-right: 2px solid rgba(0, 0, 0, 0.5)
-    33%
-        border-top: 2px solid rgba(0, 0, 0, 0.4)
-    66%
-        border-left: 2px solid rgba(0, 0, 0, 0.6)
-    100%
-        border-bottom: 5px solid rgba(0, 0, 0, 0.9)
-
-@keyframes main-menu-scroll
-    0%
-        transform: translate(0%, -100%)
-    100%
-        transform: translate(0%, 0%)
-
-@keyframes main-menu-swoop
-    0%
-        transform: translate(-100%, 0%)
-    100%
-        transform: translate(0%, 0%)
-
 @media only screen and (min-width: 768px)
     .main-nav > *
         display: block
@@ -104,11 +72,7 @@
         display: none
 
     .main-nav
-        width: 100%
-        display: flex
-        flex-flow: row nowrap
         justify-content: space-evenly
-        align-items: center
         padding-top: 5px
 
     .icon-container
@@ -127,11 +91,9 @@
         display: inline-flex
         flex-flow: row nowrap
         justify-self: flex-end
-        justify-content: space-between
         width: auto
 
     .main-nav__link
-        font-family: $font-stack-secondary
         cursor: pointer
         color: white
         padding: 15px 20px
@@ -197,10 +159,7 @@
         margin-right: 20px
 
     .main-nav__link
-        font-family: $font-stack-secondary
         transition: background-color 0.3s ease-in-out
-        cursor: pointer
-        color: white
         font-size: 1.5rem
         padding: 20px 10px
         margin: 0px 20px
@@ -218,30 +177,6 @@
     .main-nav-scroll :last-child 
         margin-right: 0px
 
-    .main-nav-scroll .main-nav__link
-        color: black
-        border: 2px solid transparent
-        border-bottom: 5px solid transparent
-        padding: 20px 30px
-        margin: 0
-
-    .main-nav-scroll .main-nav__link:hover
-        animation: underline-black 0.5s linear 0s 1
-        transition: border 1s linear 0.6s
-        transition: border-radius 0.5s linear 0s
-        border-bottom: 5px solid black
-        border-radius: 0px
-
-    .main-nav__link:hover
-        animation: underline 0.5s linear 0s 1
-        transition: border 1s linear 0.6s
-        transition: border-radius 0.5s linear 0s
-        border-bottom: 4px solid rgba(255, 255, 255, 0.9)
-        border-radius: 0px
-
-    .--swoop
-        animation: main-menu-swoop 0.6s ease-in-out 0s 1
-
     .icon
         width: 50px
 
@@ -250,3 +185,35 @@
         font-size: 1.8rem
         padding: 20px 25px
         margin: 0px 10px
+
+@keyframes underline-black
+    0%
+        border-right: 2px solid rgba(0, 0, 0, 0.5)
+    33%
+        border-top: 2px solid rgba(0, 0, 0, 0.4)
+    66%
+        border-left: 2px solid rgba(0, 0, 0, 0.6)
+    100%
+        border-bottom: 5px solid rgba(0, 0, 0, 0.9)
+
+@keyframes main-menu-scroll
+    0%
+        transform: translate(0%, -100%)
+    100%
+        transform: translate(0%, 0%)
+
+@keyframes main-menu-swoop
+    0%
+        transform: translate(-100%, 0%)
+    100%
+        transform: translate(0%, 0%)
+
+@keyframes underline
+    0%
+        border-right: 2px solid rgba(255, 255, 255, 0.5)
+    33%
+        border-top: 2px solid rgba(255, 255, 255, 0.4)
+    66%
+        border-left: 2px solid rgba(255, 255, 255, 0.6)
+    100%
+        border-bottom: 4px solid rgba(255, 255, 255, 0.9)

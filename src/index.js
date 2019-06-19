@@ -2,7 +2,7 @@ import './img/soundcloud-icon.png';
 import './img/spotify-icon.png';
 import './img/background.jpg';
 import './img/white-menu-icon.png';
-import { throttle } from 'lodash';
+import { debounce, throttle } from 'lodash';
 import './main.sass';
 
 window.onload = () => {
@@ -10,6 +10,7 @@ window.onload = () => {
     const nav = document.querySelector('NAV');
     const menuLinks = document.querySelectorAll('a[class="main-nav__link"]');
     const mainHeading = document.querySelector('h1[class="header_heading"]');
+    let swoop = false;
     
     if (window.innerWidth <= 768) {
         nav.classList.add('main-nav-small--collapsed');
@@ -19,10 +20,9 @@ window.onload = () => {
     
     window.addEventListener('scroll', throttle(navScrollHandler, 250));
     window.addEventListener('scroll', throttle(headingScrollHandler, 100));
-    window.addEventListener('resize', throttle(windowResizeHandler, 300));
+    window.addEventListener('resize', debounce(windowResizeHandler, 500));
     menuLinks.forEach(link => link.addEventListener('click', handleMenuClick));
     
-    let swoop = false;
     function navScrollHandler() {
         if (window.scrollY >= 100) {
             nav.classList.add('main-nav-scroll');
@@ -60,11 +60,9 @@ window.onload = () => {
 
     function windowResizeHandler() {
         if (window.innerWidth <= 768) {
-            nav.classList.add('main-nav-small--expanded');
-        }
-        
-        if (window.innerWidth > 768) {
-            nav.classList.remove('main-nav-small--expanded');
+            nav.classList.add('main-nav-small--collapsed');
+        } else {
+            nav.classList.remove('main-nav-small--collapsed');
         }
     }
 
