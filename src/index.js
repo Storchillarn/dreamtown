@@ -1,17 +1,18 @@
+import { throttle } from 'lodash';
 import './img/soundcloud-icon.png';
 import './img/spotify-icon.png';
 import './img/background.jpg';
 import './img/white-menu-icon.png';
 import './img/black-menu-close-icon.png';
-import { debounce, throttle } from 'lodash';
 import './main.sass';
 
 window.onload = () => {
 
     const nav = document.querySelector('NAV');
     const menuLinks = document.querySelectorAll('a[class="main-nav__link"]');
-    const mainHeading = document.querySelector('h1[class="header_heading"]');
+    const mainHeading = document.querySelector('h1[class="header__heading"]');
     const hamburger = document.getElementById('hamburger');
+    const gallery = document.getElementById('gallery-container');
 
     let swoop = false;
     
@@ -20,11 +21,26 @@ window.onload = () => {
     }
     
     loadIframes();
-    
+
     window.addEventListener('scroll', throttle(navScrollHandler, 250));
     window.addEventListener('scroll', throttle(headingScrollHandler, 100));
-    window.addEventListener('resize', debounce(windowResizeHandler, 500));
-    
+    window.addEventListener('resize', throttle(windowResizeHandler, 500));
+    window.addEventListener('resize', throttle(createMasonry, 800));
+
+    function createMasonry() {
+        const masonry = Array.from(gallery.children).reduce((acc, curr, i) => {
+            acc.totalHeight += curr.offsetHeight;
+            acc.totalCells += i;
+            return acc;
+        }, { totalHeight: 0, totalCells: 0 });
+
+        if (window.innerWidth >= 768) {
+            gallery.setAttribute('style', `height: ${Math.floor(masonry.totalHeight / 2 + masonry.totalHeight / (masonry.totalCells + 1))}px`);
+        } else if (window.innerWidth < 768) {
+            gallery.style.height = 'auto';
+        }
+    }
+
     hamburger.addEventListener('change', () => {
         if (hamburger.checked) expandMenu();
         if (!hamburger.checked) collapseMenu();
@@ -92,7 +108,7 @@ window.onload = () => {
     }
 
     function windowResizeHandler() {
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth < 768) {
             nav.classList.add('main-nav-small');
         } else {
             nav.classList.remove('main-nav-small');
