@@ -2,6 +2,7 @@ import './img/soundcloud-icon.png';
 import './img/spotify-icon.png';
 import './img/background.jpg';
 import './img/white-menu-icon.png';
+import './img/black-menu-close-icon.png';
 import { debounce, throttle } from 'lodash';
 import './main.sass';
 
@@ -10,10 +11,12 @@ window.onload = () => {
     const nav = document.querySelector('NAV');
     const menuLinks = document.querySelectorAll('a[class="main-nav__link"]');
     const mainHeading = document.querySelector('h1[class="header_heading"]');
+    const hamburger = document.getElementById('hamburger');
+
     let swoop = false;
     
     if (window.innerWidth <= 768) {
-        nav.classList.add('main-nav-small--collapsed');
+        nav.classList.add('main-nav-small');
     }
     
     loadIframes();
@@ -21,6 +24,36 @@ window.onload = () => {
     window.addEventListener('scroll', throttle(navScrollHandler, 250));
     window.addEventListener('scroll', throttle(headingScrollHandler, 100));
     window.addEventListener('resize', debounce(windowResizeHandler, 500));
+    
+    hamburger.addEventListener('change', () => {
+        if (hamburger.checked) expandMenu();
+        if (!hamburger.checked) collapseMenu();
+    });
+    
+    function expandMenu() {
+        nav.classList.toggle('main-nav');
+        let time = -100;
+        const menuExpand = setInterval(() => {
+            time += 2;
+            nav.style.transform = `translateY(${time}%)`;
+            if (time >= 0) {
+                clearInterval(menuExpand);
+            }
+        }, 10);
+    }
+
+    function collapseMenu() {
+        let time = 0;
+        const menuCollapse = setInterval(() => {
+            time -= 2;
+            nav.style.transform = `translateY(${time}%)`;
+            if (time <= -100) {
+                clearInterval(menuCollapse);
+                nav.classList.toggle('main-nav');
+            }
+        }, 10);
+    }
+
     menuLinks.forEach(link => link.addEventListener('click', handleMenuClick));
     
     function navScrollHandler() {
@@ -60,9 +93,9 @@ window.onload = () => {
 
     function windowResizeHandler() {
         if (window.innerWidth <= 768) {
-            nav.classList.add('main-nav-small--collapsed');
+            nav.classList.add('main-nav-small');
         } else {
-            nav.classList.remove('main-nav-small--collapsed');
+            nav.classList.remove('main-nav-small');
         }
     }
 
