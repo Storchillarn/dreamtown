@@ -5,6 +5,7 @@
     flex-flow: row wrap
 
 .shows__heading
+    font-family: $font-stack-primary
     font-size: 40px
     width: 100%
     text-align: center
@@ -27,6 +28,7 @@
 
 .shows-form__label
     font-size: 12px
+    letter-spacing: 2px
     padding: 6px 8px
     color: white
     background-color: $color-primary
@@ -37,7 +39,7 @@
 .shows-form__select-input, .shows-form__text-input
     font-size: 16px
     padding: 6px
-    border: 2px solid rgba(0, 0, 0, 0.4)
+    border: 2px solid $color-primary
     background-color: white
     width: 100%
     border-radius: 0 3px 3px 3px
@@ -72,6 +74,66 @@
     margin-top: 15px
     float: right
     transition: background-color 0.1s ease-in-out
+    letter-spacing: 2px
 
-.shows-form__btn:hover
-    background-color: $color-primary-hover
+    &:hover
+        background-color: $color-primary-hover
+
+@media only screen and (min-width: 768px)
+    .shows__heading
+        font-size: 50px
+
+    .shows-form
+        width: 75%
+        border-radius: 5px
+        padding: 40px
+        margin-bottom: 60px
+
+    .shows-form__label
+        font-size: 14px
+        padding: 8px 10px
+
+    .shows-form__select-input, .shows-form__text-input
+        font-size: 18px
+        padding: 8px
+    
+    .shows-form__btn
+        font-size: 18px
+        padding: 14px 24px
+
+    .select-wrapper::before
+        top: 66px;
+
+@media only screen and (min-width: 1024px)
+    .shows__heading
+        font-size: 60px
+        margin-top: 70px
+        margin-bottom: 40px
+
+    .shows-form
+        width: 75%
+        max-width: 800px
+        margin-bottom: 70px
+        padding-left: 80px
+        padding-right: 80px
+
+    .shows-form__label
+        width: 20%
+        font-size: 18px
+        padding: 14px 0 14px 15px
+        position: relative
+        left: 1px
+        border-radius: 5px 0 0 5px
+        border: 2px solid $color-primary
+
+    .shows-form__select-input, .shows-form__text-input
+        width: 80%
+        font-size: 20px
+        padding: 8px
+    
+    .select-wrapper::before
+        top: 40px;
+
+    .field-container
+        align-items: flex-start
+        margin-bottom: 20px
