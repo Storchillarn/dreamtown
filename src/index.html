@@ -3,31 +3,100 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Webpack App</title>
+  <title>Dreamtown - Atmospheric Rock - Listen now on Spotify!</title>
 </head>
 
 <body>
   <div class="nav-container">
     <nav class="main-nav">
+      <input id="hamburger" class="main-nav__hamburger" type="checkbox" />
       <div class="icon-container">
-        <a href="https://open.spotify.com/artist/31Oe0saSe7U01lFP8fV2Lt" target="_blank"><img class="icon" src="./img/spotify-icon.png" alt="spotify follow" /></a>
-        <a href="https://soundcloud.com/dreamtownband" target="_blank"><img class="icon" src="./img/soundcloud-icon.png" alt="soundcloud follow" /></a>
+        <a href="https://open.spotify.com/artist/31Oe0saSe7U01lFP8fV2Lt" target="_blank"><img class="icon"
+            src="./img/spotify-icon.png" alt="spotify follow" /></a>
+        <a href="https://soundcloud.com/dreamtownband" target="_blank"><img class="icon" src="./img/soundcloud-icon.png"
+            alt="soundcloud follow" /></a>
       </div>
       <div class="link-container">
-        <a class="main-nav__link">Music</a>
-        <a class="main-nav__link">The Band</a>
-        <a class="main-nav__link">Shows</a>
-        <a class="main-nav__link">Gallery</a>
+        <a class="main-nav__link" href="#music-section">Music</a>
+        <a class="main-nav__link" href="#band-section">The Band</a>
+        <a class="main-nav__link" href="#shows-section">Shows</a>
+        <a class="main-nav__link" href="#gallery-section">Gallery</a>
       </div>
     </nav>
   </div>
   <header class="header --fade-in">
     <div class="header-text-container">
-      <h1 class="header_heading">Dreamtown</h1>
-      <p class="header_subtitle">You're just lightyears on a screen, baby.</p>
+      <h1 class="header__heading">Dreamtown</h1>
+      <p class="header__subtitle">You're just lightyears on a screen, baby.</p>
     </div>
   </header>
-  <section class="music">
+  <section id="music-section" class="music-section">
+    <h2 class="music__heading">Listen now on Spotify!</h2>
+    <div class="music__player">
+      <iframe id="small" width="280" height="80" frameborder="0" allowtransparency="true"
+        allow="encrypted-media"></iframe>
+      <iframe id="large" width="250" height="330" frameborder="0" allowtransparency="true"
+        allow="encrypted-media"></iframe>
+    </div>
+    <div class="music__player--soundcloud">
+      <iframe id="large" width="280" height="350" scrolling="no" frameborder="no" allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/313925030&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+      <iframe id="small" width="300" height="280" scrolling="no" frameborder="no" allow="autoplay"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/313925030&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+    </div>
+    <h2 class="music__heading">Or check us out on Soundcloud.</h2>
+  </section>
+  <section id="gallery-section">
+    <div id="gallery-container" class="gallery-container">
+      <div class="gallery-card">
+        <img class="gallery-card__image" src="https://picsum.photos/300/202" />
+        <div class="gallery-card-description">
+          <h3 class="gallery-card-description__heading">Fryshuset</h3>
+          <p class="gallery-card-description__date">2019-05-31</p>
+        </div>
+      </div>
+      <div class="gallery-card">
+        <img class="gallery-card__image" src="https://picsum.photos/301/301" />
+        <div class="gallery-card-description">
+          <h3 class="gallery-card-description__heading">Fryshuset</h3>
+          <p class="gallery-card-description__date">2019-05-31</p>
+        </div>
+      </div>
+      <div class="gallery-card">
+        <img class="gallery-card__image" src="https://picsum.photos/302/300" />
+        <div class="gallery-card-description">
+          <h3 class="gallery-card-description__heading">Fryshuset</h3>
+          <p class="gallery-card-description__date">2019-05-31</p>
+        </div>
+      </div>
+      <div class="gallery-card">
+        <img class="gallery-card__image" src="https://picsum.photos/300/303" />
+        <div class="gallery-card-description">
+          <h3 class="gallery-card-description__heading">Fryshuset</h3>
+          <p class="gallery-card-description__date">2019-05-31</p>
+        </div>
+      </div>
+      <div class="gallery-card">
+        <img class="gallery-card__image" src="https://picsum.photos/300/200" />
+        <div class="gallery-card-description">
+          <h3 class="gallery-card-description__heading">Fryshuset</h3>
+          <p class="gallery-card-description__date">2019-05-31</p>
+        </div>
+      </div>
+      <div class="gallery-card">
+        <img class="gallery-card__image" src="https://picsum.photos/200/300" />
+        <div class="gallery-card-description">
+          <h3 class="gallery-card-description__heading">Fryshuset</h3>
+          <p class="gallery-card-description__date">2019-05-31</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="band-section">
+
+  </section>
+  <section id="shows-section">
 
   </section>
 </body>
