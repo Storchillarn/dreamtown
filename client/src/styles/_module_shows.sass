@@ -47,6 +47,17 @@
         background-color: $color-primary-hover
         transition: background-color 0.2s ease-in-out
 
+.select-wrapper::before
+    content: ''
+    background: url('./img/arrow-down.png') no-repeat
+    background-position: right center
+    background-size: contain
+    padding: 10px;
+    position: relative;
+    top: 58px;
+    left: calc(100% - 35px);
+    pointer-events: none
+
 .shows-form__select-option
     font-size: 14px
 

@@ -78,12 +78,14 @@
   <section id="shows-section" class="shows-section">
     <h2 class="shows__heading">Contact Us</h2>
     <form class="shows-form">
-      <div class="field-container">
-        <select class="shows-form__select-input" id="purpose" name="purpose" required>
-          <option class="shows-form__select-option" value="booking">Booking</option>
-          <option class="shows-form__select-option" value="other">Other</option>
-        </select>
-        <label class="shows-form__label" for="purpose">Purpose</label>
+      <div class="select-wrapper">
+        <div class="field-container">
+          <select class="shows-form__select-input" id="purpose" name="purpose" required>
+            <option class="shows-form__select-option" value="booking">Booking</option>
+            <option class="shows-form__select-option" value="other">Other</option>
+          </select>
+          <label class="shows-form__label" for="purpose">Purpose</label>
+        </div>
       </div>
       <div class="field-container">
         <input class="shows-form__text-input" id="email" name="email" type="email" placeholder="something@email.com"
