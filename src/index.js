@@ -1,3 +1,4 @@
+import 'bootstrap';
 import { throttle } from 'lodash';
 import './img/soundcloud-icon.png';
 import './img/spotify-icon.png';
