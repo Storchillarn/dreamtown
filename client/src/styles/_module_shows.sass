@@ -1,0 +1,66 @@
+.shows-section
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-flow: row wrap
+
+.shows__heading
+    font-size: 40px
+    width: 100%
+    text-align: center
+    margin-top: 60px
+    margin-bottom: 30px
+
+.shows-form
+    font-family: $font-stack-secondary
+    background-color: $color-primary-light
+    width: 100%
+    padding: 40px 20px
+
+.field-container
+    width: 100%
+    display: flex
+    flex-flow: row wrap
+    justify-content: space-between
+    align-items: center
+    margin-bottom: 20px
+
+.shows-form__label
+    font-size: 12px
+    padding: 6px 8px
+    color: white
+    background-color: $color-primary
+    border-radius: 5px 5px 0 0
+    margin: 0
+    order: 0
+
+.shows-form__select-input, .shows-form__text-input
+    font-size: 16px
+    padding: 6px
+    border: 2px solid rgba(0, 0, 0, 0.4)
+    background-color: white
+    width: 100%
+    border-radius: 0 3px 3px 3px
+    order: 1
+
+    &:focus + label
+        background-color: $color-primary-hover
+        transition: background-color 0.2s ease-in-out
+
+.shows-form__select-option
+    font-size: 14px
+
+.shows-form__btn
+    font-size: 14px
+    font-family: $font-stack-secondary
+    padding: 12px 22px
+    border-radius: 5px
+    background-color: $color-primary
+    color: white
+    text-transform: uppercase
+    margin-top: 15px
+    float: right
+    transition: background-color 0.1s ease-in-out
+
+.shows-form__btn:hover
+    background-color: $color-primary-hover
