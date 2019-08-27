@@ -12,7 +12,7 @@ const sender = body => {
 
     transporter.sendMail(message, (error, info) => {
         if (error) {
-            throw new Error (error);
+            throw new Error(error);
         }
         else console.log(info);
     })

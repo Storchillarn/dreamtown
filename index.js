@@ -1,4 +1,4 @@
-require('dotenv').config();
+// require('dotenv').config();
 const app = require('./server/app');
 const chalk = require('chalk');
 
