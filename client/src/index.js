@@ -9,6 +9,7 @@ import './img/arrow-down.png';
 import './main.sass';
 import formSubmitHandler from './js/contact-form';
 import showSuccessMessage from './js/showSuccessMessage';
+import loadIframes from './js/loadIframes';
 
 window.onloadCallback = function() {
     grecaptcha.render('grecaptcha-container', {
@@ -111,11 +112,5 @@ window.onload = () => {
         } else {
             nav.classList.remove('main-nav-small');
         }
-    }
-
-    function loadIframes() {
-        const iframeSrc = 'https://open.spotify.com/embed/album/2zsWAvWqBPARwk3nfldfvX';
-        document.querySelector('iframe[id="small"]').setAttribute('src', iframeSrc);
-        document.querySelector('iframe[id="large"]').setAttribute('src', iframeSrc);
     }
 }
