@@ -9,7 +9,11 @@ module.exports = merge(common, {
         new MiniCssExtractPlugin({
             filename: '[name].css',
             chunkFilename: '[id].css'
-        })
+        }),
+        new webpack.DefinePlugin({           
+            GRECAPTCHA_SECRET: JSON.stringify(process.env.GRECAPTCHA_SECRET),
+            GRECAPTCHA_SITEKEY: JSON.stringify(process.env.GRECAPTCHA_SITEKEY)
+          })
     ],
     module: {
         rules: [
