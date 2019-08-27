@@ -1,4 +1,5 @@
 const nodemailer = require('nodemailer');
+const chalk = require('chalk');
 
 const options = {
     service: 'Gmail',
@@ -13,8 +14,8 @@ const options = {
 let transporter = nodemailer.createTransport(options);
 
 transporter.verify((error, success) => {
-    if (error) console.log(error);
-    else (console.log('Success! Server is ready to take our messages.'))
+    if (error) console.log(`${chalk.black.bgRed('NODEMAILER')}${error}`);
+    else (console.log(`${chalk.black.bgGreen('NODEMAILER')} Success! Server is ready to take our messages.`))
 });
 
 module.exports = transporter;

@@ -1,7 +1,7 @@
 const transporter = require('./transporter');
 
-const sender = ({ body }) => {
-    
+const sender = body => {
+
     const message = {
         from: 'no-reply@dreamtown.com',
         to: 'gustaflundstrom90@gmail.com',
@@ -10,10 +10,12 @@ const sender = ({ body }) => {
         html: body
     };
 
-    // transporter.sendMail(message, (error, info) => {
-    //     if (error) console.log(error);
-    //     else console.log(info);
-    // })
+    transporter.sendMail(message, (error, info) => {
+        if (error) {
+            throw new Error (error);
+        }
+        else console.log(info);
+    })
 }
 
 module.exports = sender;

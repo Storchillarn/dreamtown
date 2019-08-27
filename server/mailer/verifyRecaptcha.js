@@ -13,8 +13,13 @@ const verifyRecaptcha = recaptchaToken => {
         }
     })
     .then(res => res.json())
-    .then(body => body.success)
-    .catch(console.error)
+    .then(body => {
+        if (body.success) return body.success;
+        else throw new Error('Verification failed.')
+    })
+    .catch(error => {
+        throw new Error(error);
+    });
 }
 
 module.exports = verifyRecaptcha;

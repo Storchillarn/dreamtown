@@ -9,19 +9,32 @@ const app = express();
 app.use(express.static(path.join('client', 'dist')));
 app.use(bodyParser.json());
 
+app.post('/api/recaptcha', async (req, res) => {
+    
+    try {
+        await verifyRecaptcha(req.body.token);
+        res.status(200).end();
+    } catch(error) {
+        console.error(error);
+        res.status(400).end();
+    }
+})
+
 app.post('/api/mail', async (req, res) => {
     
-    const { body, recaptchaToken } = req.body;
-    const recaptchaResponse = await verifyRecaptcha(recaptchaToken);
+    const { body } = req.body;
     
-    if (!recaptchaResponse) res.status(400).end();
-    
-    sender(body);
+    try {
+        await sender(body);
+        res.status(204).end();
+    } catch {
+        res.status(400).end();
+    }
 
-    res.status(204).end();
 });
+
 app.get('*', (req, res) => {
     res.sendFile(path.join('client', 'dist', 'index.html'));
 });
 
-module.exports.app = app;
+module.exports = app;

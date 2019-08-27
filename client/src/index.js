@@ -12,7 +12,8 @@ import showSuccessMessage from './js/showSuccessMessage';
 
 window.onloadCallback = function() {
     grecaptcha.render('grecaptcha-container', {
-      'sitekey': process.env.GRECAPTCHA_SITEKEY
+      'sitekey': process.env.GRECAPTCHA_SITEKEY,
+      'theme': 'dark'
     });
 };
   
