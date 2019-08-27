@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "build": "cd client && webpack --config webpack.config.prod.js",
+    "build": "cd client && npm run build",
     "nodemon": "nodemon index.js"
   },
   "repository": {
