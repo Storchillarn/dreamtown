@@ -7,7 +7,7 @@ import './img/white-menu-icon.png';
 import './img/black-menu-close-icon.png';
 import './img/arrow-down.png';
 import './main.sass';
-import formSubmitHandler from './js/form-submission';
+import formSubmitHandler from './js/contact-form';
 import showSuccessMessage from './js/showSuccessMessage';
 
 window.onloadCallback = function() {
