@@ -1,11 +1,11 @@
 const fetch = require('node-fetch');
+const qs = require('querystring');
 
 const verifyRecaptcha = recaptchaToken => {
-    const base = 'https://www.google.com/recaptcha/api/siteverify';
-    const secret = 'secret=' + process.env.GRECAPTCHA_SECRET;
-    const response = 'response=' + recaptchaToken;
-    const endpoint = base + '?' + secret + '&' + response;
-    
+    const base = 'https://www.google.com/recaptcha/api/siteverify?';
+    const queryString = qs.stringify({ secret: process.env.GRECAPTCHA_SECRET, response: recaptchaToken });
+    const endpoint = base + queryString;
+
     return fetch(endpoint, {
         method: 'POST',
         headers: {

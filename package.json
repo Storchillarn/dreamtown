@@ -4,7 +4,7 @@
   "description": "Promotional site for the band Dreamtown.",
   "main": "index.js",
   "scripts": {
-    "start-server": "node index.js",
+    "start": "node index.js",
     "nodemon": "nodemon index.js"
   },
   "repository": {

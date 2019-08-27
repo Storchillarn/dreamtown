@@ -1,4 +1,4 @@
-const transporter = require('./nodemailer-config');
+const transporter = require('./transporter');
 
 const sender = ({ body }) => {
     

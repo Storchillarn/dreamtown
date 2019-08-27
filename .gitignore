@@ -4,4 +4,3 @@ client/dist
 npm-debug.log
 .DS_Store
 *.env
-**/nodemailer-config.js
