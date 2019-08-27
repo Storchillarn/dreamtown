@@ -1,6 +1,6 @@
 const transporter = require('./nodemailer-config');
 
-const sender = ({ body, senderEmail }) => {
+const sender = ({ body }) => {
     
     const message = {
         from: 'no-reply@dreamtown.com',
@@ -10,10 +10,10 @@ const sender = ({ body, senderEmail }) => {
         html: body
     };
 
-    transporter.sendMail(message, (error, info) => {
-        if (error) console.log(error);
-        else console.log(info);
-    })
+    // transporter.sendMail(message, (error, info) => {
+    //     if (error) console.log(error);
+    //     else console.log(info);
+    // })
 }
 
 module.exports = sender;

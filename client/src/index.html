@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Dreamtown - Atmospheric Rock - Listen now on Spotify!</title>
+  <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
 </head>
 
 <body>
@@ -76,7 +77,7 @@
   </section>
   <section id="shows-section" class="shows-section">
     <h2 class="shows__heading">Contact Us</h2>
-    <form class="shows-form">
+    <form id="shows-form" class="shows-form">
       <div class="select-wrapper">
         <div class="field-container">
           <select class="shows-form__select-input" id="purpose" name="purpose" required>
@@ -95,6 +96,7 @@
         <textarea class="shows-form__text-input" id="message" name="message" rows="3" required></textarea>
         <label class="shows-form__label" for="message">Message</label>
       </div>
+      <div id="grecaptcha-container"></div>
       <input class="shows-form__btn" type="submit" value="submit" />
     </form>
   </section>

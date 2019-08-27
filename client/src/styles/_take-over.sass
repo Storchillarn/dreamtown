@@ -1,0 +1,55 @@
+.take-over
+    width: 100vw
+    height: 100vh
+    z-index: 20
+    position: fixed
+    top: 0
+    left: 0
+    background-color: #272727
+    color: white
+    text-align: center
+    display: flex
+    align-items: center
+    justify-content: center
+    font-family: $font-stack-secondary
+    opacity: 0
+    animation: pulse 4s ease-in-out
+
+    div
+        padding: 0 40px
+
+.take-over__title
+    font-size: 32px
+    margin-bottom: 16px
+
+.take-over__subtitle
+    font-size: 24px
+
+@media only screen and (min-width: 768px)
+    .take-over__title
+        font-size: 42px
+        margin-bottom: 20px
+
+    .take-over__subtitle
+        font-size: 34px
+
+@media only screen and (min-width: 1024px)
+    .take-over__title
+        font-size: 60px
+
+    .take-over__subtitle
+        font-size: 40px
+
+
+@keyframes pulse
+    0%
+        opacity: 0
+    25%
+        opacity: 1
+    50%
+        opacity: 1
+    75%
+        opacity: 1
+    100%
+        opacity: 0
+        

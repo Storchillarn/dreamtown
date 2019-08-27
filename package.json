@@ -20,5 +20,8 @@
   "homepage": "https://github.com/Storchillarn/dreamtown#readme",
   "devDependencies": {
     "nodemon": "^1.19.1"
+  },
+  "dependencies": {
+    "dotenv": "^8.1.0"
   }
 }

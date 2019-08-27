@@ -7,13 +7,22 @@ import './img/white-menu-icon.png';
 import './img/black-menu-close-icon.png';
 import './img/arrow-down.png';
 import './main.sass';
+import formSubmitHandler from './js/form-submission';
+import showSuccessMessage from './js/showSuccessMessage';
 
+window.onloadCallback = function() {
+    grecaptcha.render('grecaptcha-container', {
+      'sitekey': process.env.GRECAPTCHA_SITEKEY
+    });
+};
+  
 window.onload = () => {
 
     const nav = document.querySelector('NAV');
     const menuLinks = document.querySelectorAll('a[class="main-nav__link"]');
     const mainHeading = document.querySelector('h1[class="header__heading"]');
     const hamburger = document.getElementById('hamburger');
+    const showsForm = document.getElementById('shows-form');
 
     let swoop = false;
     
@@ -26,6 +35,8 @@ window.onload = () => {
     window.addEventListener('scroll', throttle(navScrollHandler, 250));
     window.addEventListener('scroll', throttle(headingScrollHandler, 100));
     window.addEventListener('resize', throttle(windowResizeHandler, 500));
+
+    showsForm.addEventListener('submit', e => formSubmitHandler(e, showSuccessMessage));
 
     hamburger.addEventListener('change', () => {
         if (hamburger.checked) expandMenu();
