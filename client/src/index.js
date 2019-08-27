@@ -13,7 +13,7 @@ import loadIframes from './js/loadIframes';
 
 window.onloadCallback = function() {
     grecaptcha.render('grecaptcha-container', {
-      'sitekey': process.env.GRECAPTCHA_SITEKEY,
+      'sitekey': GRECAPTCHA_SITEKEY,
       'theme': 'dark'
     });
 };
