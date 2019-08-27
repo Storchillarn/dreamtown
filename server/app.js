@@ -27,7 +27,8 @@ app.post('/api/mail', async (req, res) => {
     try {
         await sender(body);
         res.status(204).end();
-    } catch {
+    } catch(error) {
+        console.error(error);
         res.status(400).end();
     }
 
