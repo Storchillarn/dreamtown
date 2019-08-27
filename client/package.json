@@ -39,17 +39,15 @@
     "webpack-merge": "^4.2.1"
   },
   "scripts": {
-    "test": "mocha",
+    "build": "webpack --config webpack.config.prod.js",
+    "dev": "webpack-dev-server --open --config webpack.config.dev.js",
     "lint": "eslint src/*.js",
-    "start": "node server.js",
     "sass": "sass src/css/main.sass src/css/main.css",
     "sass-watch": "sass --watch src/css/main.sass src/css/main.css",
     "postcss": "npx postcss src/css/*.css --use autoprefixer -d src",
     "postcss-watch": "postcss -w src/css/*.css --use autoprefixer -d src",
     "babel": "babel src/js/*.js -d src",
-    "babel-watch": "babel -w src/js/*.js -d src",
-    "dev": "webpack-dev-server --open --config webpack.config.dev.js",
-    "build": "webpack --config webpack.config.prod.js"
+    "babel-watch": "babel -w src/js/*.js -d src"
   },
   "repository": {
     "type": "git",

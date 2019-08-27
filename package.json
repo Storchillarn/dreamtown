@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "Promotional site for the band Dreamtown.",
   "main": "index.js",
+  "engines": {
+    "node": "12.4.0"
+  },
   "scripts": {
     "start": "node index.js",
-    "build": "cd client && npm run build",
-    "nodemon": "nodemon index.js"
+    "heroku-postbuild": "cd client && npm run build"
   },
   "repository": {
     "type": "git",
