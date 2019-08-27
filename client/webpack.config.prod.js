@@ -1,5 +1,6 @@
 const path = require('path');
 const merge = require('webpack-merge');
+const { DefinePlugin } = require('webpack');
 const common = require('./webpack.config.common.js');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -10,7 +11,7 @@ module.exports = merge(common, {
             filename: '[name].css',
             chunkFilename: '[id].css'
         }),
-        new webpack.DefinePlugin({           
+        new DefinePlugin({           
             GRECAPTCHA_SECRET: JSON.stringify(process.env.GRECAPTCHA_SECRET),
             GRECAPTCHA_SITEKEY: JSON.stringify(process.env.GRECAPTCHA_SITEKEY)
           })
